@@ -31,7 +31,8 @@ class GoldPrices(object):
         self.container.append(price_item)
 
     def to_json(self) -> str:
-        return json.dumps(self.container, default=lambda o: o.__dict__, sort_keys=True, indent=4)
+        my_dict = {"timestamp": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), "data": self.container}
+        return json.dumps(my_dict, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
 Gold = GoldPrices()
 
