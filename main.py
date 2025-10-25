@@ -69,8 +69,9 @@ try:
         time.sleep(0.3)
 
 except KeyboardInterrupt:
-    driver.quit()
     print("quit!")
+    exit(0)
 
 finally:
+    print("done!")
     driver.quit()
